@@ -12,13 +12,13 @@ def yahoo_download(name):
 
 
 def profile_download(name):
-    url = ("https://financialmodelingprep.com/api/v3/company/profile/" + name + "?apikey=f4316d749878bafa2b5d132402cd3c16")
+    url = ("https://financialmodelingprep.com/api/v3/company/profile/" + name + "?apikey=API-KEY")
     response = urlopen(url)
     data = response.read().decode("utf-8")
     return json.loads(data)['profile']
 
 def dividend_download(name):
-    url = ("https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/" + name + "?apikey=f4316d749878bafa2b5d132402cd3c16")
+    url = ("https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/" + name + "?apikey=API-KEY")
     response = urlopen(url)
     data = response.read().decode("utf-8")
     return ch.dividend(json.loads(data)['historical'])
